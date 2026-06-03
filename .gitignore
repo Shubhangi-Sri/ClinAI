@@ -1,0 +1,13 @@
+.venv/
+local_env.txt
+.env
+*.env
+*.log
+__pycache__/
+*.pyc
+
+frontend/node_modules/
+
+*.db
+
+.vscode/

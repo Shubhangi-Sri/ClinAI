@@ -1,0 +1,53 @@
+{
+  "folders": [
+    { "name": "ClinAI Root",    "path": "." },
+    { "name": "Backend",        "path": "./backend" },
+    { "name": "Frontend",       "path": "./frontend" }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder:Backend}/.venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[python]": { "editor.defaultFormatter": "ms-python.python" },
+    "files.exclude": { "**/__pycache__": true, "**/.venv": true, "**/node_modules": true }
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "▶ Run Backend",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder:Backend}/main.py",
+        "envFile": "${workspaceFolder:Backend}/.env",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Start Backend",
+        "type": "shell",
+        "command": "cd backend && .venv/bin/python main.py",
+        "group": "build",
+        "presentation": { "panel": "dedicated", "reveal": "always" }
+      },
+      {
+        "label": "Start Frontend",
+        "type": "shell",
+        "command": "cd frontend && npm start",
+        "group": "build",
+        "presentation": { "panel": "dedicated", "reveal": "always" }
+      },
+      {
+        "label": "🚀 Start Both (Backend + Frontend)",
+        "dependsOn": ["Start Backend", "Start Frontend"],
+        "group": { "kind": "build", "isDefault": true }
+      }
+    ]
+  }
+}
