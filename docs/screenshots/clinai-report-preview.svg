@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700">
+  <rect width="100%" height="100%" fill="#fbfcff"/>
+  <rect x="24" y="24" width="952" height="652" rx="8" fill="#ffffff" stroke="#e6eef6" stroke-width="2"/>
+  <text x="48" y="64" font-family="Georgia, serif" font-size="22" fill="#0b2a45">Generated SOAP Note — (Placeholder)</text>
+  <line x1="48" y1="80" x2="952" y2="80" stroke="#e1eef9" stroke-width="1"/>
+
+  <text x="56" y="108" font-family="Arial" font-size="13" fill="#0b3b57">SUBJECTIVE</text>
+  <rect x="56" y="116" width="880" height="80" rx="6" fill="#fbfbfb" stroke="#f0f6fa"/>
+  <text x="64" y="138" font-family="Arial" font-size="12" fill="#3b5569">Patient reports sharp left-sided chest pain for three days.</text>
+
+  <text x="56" y="220" font-family="Arial" font-size="13" fill="#0b3b57">OBJECTIVE</text>
+  <rect x="56" y="228" width="880" height="80" rx="6" fill="#fbfbfb" stroke="#f0f6fa"/>
+  <text x="64" y="250" font-family="Arial" font-size="12" fill="#3b5569">BP 138/88, HR 94, SpO2 97%. Ordering ECG and troponin.</text>
+
+  <text x="56" y="312" font-family="Arial" font-size="13" fill="#0b3b57">ASSESSMENT</text>
+  <rect x="56" y="320" width="880" height="120" rx="6" fill="#fbfbfb" stroke="#f0f6fa"/>
+  <text x="64" y="342" font-family="Arial" font-size="12" fill="#3b5569">1. Chest pain — rule out ACS. 2. Possible pleuritic pain.</text>
+
+  <text x="56" y="452" font-family="Arial" font-size="13" fill="#0b3b57">PLAN</text>
+  <rect x="56" y="460" width="880" height="140" rx="6" fill="#fbfbfb" stroke="#f0f6fa"/>
+  <text x="64" y="482" font-family="Arial" font-size="12" fill="#3b5569">Order ECG, chest X-ray, troponin; provide analgesia; follow-up in 48 hours.</text>
+
+  <text x="56" y="620" font-family="Arial" font-size="10" fill="#7a98ab">Placeholder image — replace with real report screenshot in docs/screenshots/clinai-report-preview.svg</text>
+</svg>

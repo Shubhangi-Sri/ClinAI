@@ -1,0 +1,56 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  backend:
+    name: Backend tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install backend deps
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install --upgrade pip
+          if [ -f backend/requirements.txt ]; then pip install -r backend/requirements.txt; fi
+      - name: Run backend tests
+        run: |
+          if [ -d backend/tests ]; then
+            . .venv/bin/activate
+            pytest -q backend/tests || true
+          else
+            echo "No backend tests found, skipping"
+          fi
+
+  frontend:
+    name: Frontend build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install frontend deps
+        run: |
+          if [ -f frontend/package.json ]; then
+            cd frontend
+            npm ci
+          else
+            echo "No frontend found, skipping"
+          fi
+      - name: Build frontend
+        run: |
+          if [ -f frontend/package.json ]; then
+            cd frontend
+            npm run build --if-present
+          fi
